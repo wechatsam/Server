@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="im.servers.center.dao.mappers.RegiserMapper">
+	<!-- 
+		根据类型编号来查询信息,
+		id:是一个唯一标识,相当于数据中的主键,在同一命名空间下,不可出现同名id,
+		parameterType:参数类型 ,
+		resultType:返回类型 
+	-->
+	<select id="getAccount" parameterType="java.lang.String" resultType="im.servers.center.dao.entities.Account">
+	<!-- #{id}获取用户给定的参数,若用户给定的是一个对象或map等这类有属性或键的,
+	那么#{}中就写对应的属性名或名字 -->
+		select * from im_account where account = #{account}
+		<!-- _parameter 指传的parameter参数-->
+	</select>
+	<!-- 
+		添加一個類型信息;
+		用戶給定的參數就是需要添加這個類型對象;
+		對應的增、刪、改，返回值都是語句執行后所影響的行數，故可不指定resultType
+	-->
+    <insert id="addAccount" parameterType="java.util.Map">
+        insert into im_account(uid, account, password) 
+		values(#{uid}, #{account}, #{password})
+    </insert>	
+
+
+    <insert id="addUser" parameterType="java.util.Map">
+        insert into im_user(uid, nickName, loginTime) 
+		values(#{uid}, #{nickName}, #{loginTime})
+    </insert>	
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.dao.mappers.UpdateToRedisMapper">
+	<!-- 
+		根据类型编号来查询信息,
+		id:是一个唯一标识,相当于数据中的主键,在同一命名空间下,不可出现同名id,
+		parameterType:参数类型 ,
+		resultType:返回类型 
+	-->
+	<select id="getGroups" resultType="com.server.dao.entities.GroupItem">
+	<!-- #{id}获取用户给定的参数,若用户给定的是一个对象或map等这类有属性或键的,
+	那么#{}中就写对应的属性名或名字 -->
+		select * from im_user_groups
+		<!-- _parameter 指传的parameter参数-->
+	</select>
+
+	<select id="getUsers" resultType="com.server.dao.entities.User">
+	<!-- #{id}获取用户给定的参数,若用户给定的是一个对象或map等这类有属性或键的,
+	那么#{}中就写对应的属性名或名字 -->
+		select * from im_user
+		<!-- _parameter 指传的parameter参数-->
+	</select>
+
+	<select id="getAccounts" resultType="com.server.dao.entities.Account">
+	<!-- #{id}获取用户给定的参数,若用户给定的是一个对象或map等这类有属性或键的,
+	那么#{}中就写对应的属性名或名字 -->
+		select * from im_account
+		<!-- _parameter 指传的parameter参数-->
+	</select>
+
+	<select id="getFriends" resultType="com.server.dao.entities.FriendItem">
+	<!-- #{id}获取用户给定的参数,若用户给定的是一个对象或map等这类有属性或键的,
+	那么#{}中就写对应的属性名或名字 -->
+		select * from im_user_friends
+		<!-- _parameter 指传的parameter参数-->
+	</select>
+
+	 
+</mapper>

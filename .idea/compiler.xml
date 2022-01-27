@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="RegisterServer" />
+        <module name="message-queue" />
+        <module name="CenterServer" />
+        <module name="LoginServer" />
+        <module name="ChatServer" />
+        <module name="redis" />
+        <module name="Common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MessageQueue" target="1.8" />
+      <module name="Redis" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CenterServer" options="-parameters" />
+      <module name="ChatServer" options="-parameters" />
+      <module name="Common" options="-parameters" />
+      <module name="LoginServer" options="-parameters" />
+      <module name="MessageQueue" options="-parameters" />
+      <module name="Redis" options="-parameters" />
+      <module name="RegisterServer" options="-parameters" />
+      <module name="message-queue" options="-parameters" />
+      <module name="redis" options="-parameters" />
+    </option>
+  </component>
+</project>

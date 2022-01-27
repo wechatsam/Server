@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.dao.mappers.FriendMapper">
+	<!-- 
+		根据类型编号来查询信息,
+		id:是一个唯一标识,相当于数据中的主键,在同一命名空间下,不可出现同名id,
+		parameterType:参数类型 ,
+		resultType:返回类型 
+	-->
+    <insert id="addFriend" parameterType="java.util.Map">
+        insert into im_user_friends(uid, fid, nickName, avatar, block, birthday, phone, email, sgin, male) 
+		values(#{uid}, #{fid}, #{nickName}, #{avatar}, #{block}, #{birthday}, #{phone}, #{email}, #{sgin}, #{male})
+    </insert>	
+
+    <!--<insert id="deleteFriend" parameterType="java.util.Map">
+        insert into im_user_friends(uid, account, password) 
+		values(#{uid}, #{account}, #{password})
+     
+    </insert> --> 
+</mapper>
